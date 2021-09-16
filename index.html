@@ -526,6 +526,7 @@
     </div>
     <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="2c6fa28d-26e6-45c6-932c-8d74e73f1db1" data-blockingmode="auto" type="text/javascript"></script>
 
+
     <script src="https://s1.pearlcdn.com/RU/contents/js/lib/jquery-3.4.1.min.js"></script>
     <script src="https://www.ru.playblackdesert.com/Api/Language"></script>
     <script src="https://s1.pearlcdn.com/RU/contents/js/common/language/bdo/ru/languagepack.js?v=637672082470000000"></script>
@@ -534,6 +535,52 @@
     <script src="https://s1.pearlcdn.com/RU/contents/js/payment/payment.js?v=637672082470000000"></script>
     <script src="https://s1.pearlcdn.com/RU/contents/js/lib/jquery.unobtrusive-ajax.min.js?v=637672082470000000"></script>
     <script src="https://s1.pearlcdn.com/RU/contents/js/lib/jquery-ajax-helper.min.js?v=637672082470000000"></script>
+    <script>
+        $(function () {
+            _abyss.payment.acoinManualPayment.init();
+        });
+    </script>
+    <script type="text/javascript">
+
+        var isMolPrePayment = true;
+
+        function setMolPrePaidStart(_pgCode) {
+            _abyss.confirmLogin(function () {
+                alert("Оплата была ограничена для данного аккаунта.\nДля получения более подробной информации, пожалуйста, обратитесь в [Службу поддержки].");
+            });
+            return false;
+        }
+
+        function fnSetAcoinPayment(_webItemCode, _webItemName, _acoinManualPaymentAmount, _acoinAmount) {
+            if (confirm("Использование доступно после авторизации. Перейти на страницу авторизации?"))
+            {
+                window.location = "https://account.ru.playblackdesert.com/Member/Login/?_returnUrl=https://payment.ru.playblackdesert.com/Pay/Home/";
+            }
+        }
+
+        function fnInitPaymentMethod() {
+            alert("Оплата была ограничена для данного аккаунта.\nДля получения более подробной информации, пожалуйста, обратитесь в [Службу поддержки].");
+            return false;
+        }
+    </script>
+
+    <script>
+        var bodyLangCode = "ru-RU";
+        var bodyCountryCode = "KR";
+
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://s1.pearlcdn.com/global_static/js/game_network.js?ver=637672082470000000';
+        document.getElementsByTagName('HEAD')[0].appendChild(script);
+
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://s1.pearlcdn.com/global_static/css/game_network.css?ver=637672082470000000';
+        document.getElementsByTagName('HEAD')[0].appendChild(link);
+    </script>
+
+
 
 </body>
 </html>
